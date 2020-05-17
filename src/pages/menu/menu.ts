@@ -23,5 +23,9 @@ export class Menu {
 
     this.navCtrl.push('FinanceiroPage');
   }
+  openCadFinanceiro(){
+
+    this.navCtrl.push('CadFinanceiroPage');
+  }
 
 }
