@@ -21,11 +21,53 @@ export class Menu {
 
   openFinanceiro(){
 
-    this.navCtrl.push('FinanceiroPage');
+    this.navCtrl.setRoot('FinanceiroPage');
   }
+  
   openCadFinanceiro(){
 
-    this.navCtrl.push('CadFinanceiroPage');
+    this.navCtrl.setRoot('CadFinanceiroPage');
+  }
+  
+  openCategoria(){
+
+    this.navCtrl.setRoot('ListCategoriaPage');
+  }
+  
+  openDetalhe(){
+
+    this.navCtrl.setRoot('ListDetalhesPage');
+  }
+
+  openTransacoes(){
+
+    this.navCtrl.setRoot('CadTransacoesPage');
+  }
+
+  openEstCategoria(){
+
+    this.navCtrl.push('EstCategoriaPage');
+  }
+
+  openContaRececeber(){
+
+    this.navCtrl.push('ContaRecebePage');
+  }
+
+  openContaPagar(){
+
+    this.navCtrl.push('ContaPagarPage');
+  }
+
+
+  openContaPagarCaixa(){
+
+    this.navCtrl.push('CaixaPagarPage');
+  }
+
+  openContaPagarReceber(){
+
+    this.navCtrl.push('CaixaReceberPage');
   }
 
 }

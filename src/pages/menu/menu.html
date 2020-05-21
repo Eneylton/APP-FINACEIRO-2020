@@ -7,35 +7,54 @@
 
   <ion-content class="card-background-page">
 
-    <ion-item >
-
-      <ion-avatar>
-        <img src="./assets/imgs/avatar.png" />
+      <ion-avatar >
+        <img style="width:100px; height:70px; margin-left: 70px;" src="../../assets/imgs/03.png" />
       </ion-avatar>
-      
-      <h2>Usuário</h2>
-
-  </ion-item>
+      <p style="text-align: center; font-size: 15px;">eneylton@hotmail.com</p>
 
     <ion-list>
-    
 
-        <button menuClose ion-item >
-          <ion-icon name="ios-arrow-forward" item-right></ion-icon>
-          <span>Home</span>
+        <button menuClose ion-item (click)="openEstCategoria()" >
+          <ion-icon style="font-size: 20px;" name="ios-arrow-forward" item-right></ion-icon>
+          <span>Estatíticas</span>
         </button>
-        
-        <button menuClose ion-item (click)="openFinanceiro()" >
-          <ion-icon name="ios-arrow-forward" item-right></ion-icon>
-        
-          <span>Movimentações</span>
-        </button>
-
 
         <button menuClose ion-item (click)="openCadFinanceiro()" >
-          <ion-icon name="ios-arrow-forward" item-right></ion-icon>
+          <ion-icon style="font-size: 20px;"  name="ios-arrow-forward" item-right></ion-icon>
         
           <span>Caixa</span>
+        </button>
+
+        <button menuClose ion-item (click)="openTransacoes()" >
+          <ion-icon style="font-size: 20px;"  name="ios-arrow-forward" item-right></ion-icon>
+        
+          <span>Transações</span>
+        </button>
+
+        <button menuClose ion-item (click)="openContaPagarCaixa()" >
+          <ion-icon style="font-size: 20px;" name="ios-arrow-forward" item-right></ion-icon>
+          <span>Contas a Pagar Caixa </span>
+        </button>
+
+        <button menuClose ion-item (click)="openContaPagarReceber()" >
+          <ion-icon style="font-size: 20px;" name="ios-arrow-forward" item-right></ion-icon>
+          <span>Contas a Receber Caixa </span>
+        </button>
+        <button menuClose ion-item (click)="openContaPagar()" >
+          <ion-icon style="font-size: 20px;" name="ios-arrow-forward" item-right></ion-icon>
+          <span>Contas a Pagar Banco</span>
+        </button>
+
+        <button menuClose ion-item (click)="openContaRececeber()" >
+          <ion-icon style="font-size: 20px;" name="ios-arrow-forward" item-right></ion-icon>
+          <span>Contas a Receber Banco </span>
+        </button>
+
+
+        <button menuClose ion-item (click)="openCategoria()" >
+          <ion-icon style="font-size: 20px;"  name="ios-arrow-forward" item-right></ion-icon>
+        
+          <span>Categoria</span>
         </button>
 
 
@@ -44,3 +63,4 @@
 
 </ion-menu>
 <ion-nav [root]="homePage" #content ></ion-nav>
+

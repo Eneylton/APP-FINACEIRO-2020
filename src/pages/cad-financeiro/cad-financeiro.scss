@@ -1,43 +1,29 @@
-page-cad-financeiro {
+  .tamanho{
 
-    .selector {
-        font-family: SFNSDisplay;
-        font-size: 12px;
-        line-height: 1.2;
-        letter-spacing: 0.1px;
-        color: #29235e;
-        width: 100% !important;
-        max-width: 100% !important;
-        justify-content: center;
-        border: solid 2px #e8ebf0;
-        background-color: #ffffff;
-        text-align: center;
-      }
-      .option {
-        font-family: SFNSDisplay;
-        font-size: 8px;
-        line-height: 1.2;
-        letter-spacing: 0.1px;
-        color: #29235e;
-        width: 100% !important;
-        max-width: 100% !important;
-        justify-content: center;
-        height: 20px;
-      }
-    
-      ion-option .list{
-        font-family: SFNSDisplay;
-        font-size: 8px !important;
-        max-width: 100% !important;
-      }
-      .ion-option-items .item{
-        font-family: SFNSDisplay;
-        font-size: 8px !important;
-        max-width: 100% !important;
-      }
-     .select-popover {
-        font-family: SFNSDisplay !important;
-        font-size: 8px !important;
-        max-width: 100% !important;
-      }
-}
+    font-size: 13px !important;
+  }
+
+  .box1{
+    color:#fff;
+    background-image: url(../../assets/imgs/56.jpg); 
+    padding: 10px; 
+    border: 1px solid #4a8883;
+    border-radius: 5px;
+  }
+
+  .box2{
+    color:#fff;
+    background-image: url(../../assets/imgs/amarelo.jpg); 
+    background-repeat: no-repeat;
+    background-size: 300px 150px;
+    padding: 10px; 
+    border: 1px solid #f5e981;
+    border-radius: 5px;
+  }
+
+  .placeholder{
+    margin-right: 10px !important;
+  }
+
+
+

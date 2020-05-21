@@ -1,7 +1,12 @@
-<ion-header >
-  <ion-navbar color="laranja" >
-    <ion-title>Fluxo de Caixa</ion-title>
+<ion-header no-border >
+  <ion-navbar color="marinho" >
+
+    <ion-title><span  class="tamanho"> Fluxo de Caixa </span></ion-title>
+  
     <ion-buttons start>
+      <button ion-button (click)="openHome()"> 
+        <ion-icon name="md-arrow-back"  ></ion-icon>
+      </button>
       <button ion-button icon only (click)="cadastrar()">
           
         <ion-icon color="#019386" name="checkmark"></ion-icon>
@@ -12,9 +17,9 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
 
-  <ion-list>
+  <ion-list style="margin-top: 15px;">
 
     
       <ion-item>
@@ -37,14 +42,16 @@
       </ion-item>
 
       <ion-item>
+        <ion-label style="font-size: 14px;">Data de Pagamento</ion-label>
+        <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="data_pagamento"></ion-datetime>
+      </ion-item>
+
+      <ion-item>
         <ion-input type="text" placeholder="R$" [(ngModel)]="valor" [brmasker]="{money: true, decimalCaracter: '.', decimal: '2'}"  ></ion-input>
       
       </ion-item>
 
-      <ion-item>
-        <ion-label style="font-size: 14px;">Data de Pagamento</ion-label>
-        <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="data_pagamento"></ion-datetime>
-      </ion-item>
+    
 
       <ion-list radio-group [(ngModel)]="pago">
 
@@ -84,7 +91,7 @@
           
             <ion-item>
               <ion-label style="font-size: 14px;">Caixa</ion-label>
-              <ion-radio color="laranja" value="1"></ion-radio>
+              <ion-radio checked="true" color="laranja" value="1"></ion-radio>
             </ion-item>
           
             <ion-item>
@@ -96,5 +103,4 @@
 
 
   </ion-list>
-
 </ion-content>

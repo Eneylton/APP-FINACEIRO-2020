@@ -33,15 +33,24 @@ $app-direction: ltr;
 // colors so you can add, rename and remove colors as needed.
 // The "primary" color is the only required color in the map.
 
+
 $colors: (
-  primary:    #2575ff,
-  secondary:  #04ce0e,
-  danger:     #ec0303,
-  light:      #f4f4f4,
+  primary:    #00BCD4,
+  marinho:    #2f4058,
+  secondary:  #8bc34a,
+  marron:     #e2824e,
+  laranja:    #febb04,
   dark:       #222,
-  laranja:    rgba(243, 219, 2, 0.842),
-  lilas:      rgba(94, 6, 94, 0.842),
-  red:        rgb(180, 0, 0),
+  amarelo:    #ffeb3b,
+  green  :    rgb(7, 255, 160),
+  caramelo:   rgb(255, 123, 0),
+  azul:       rgba(7, 22, 241, 0.842),
+  rosa:       #ea195b,
+  branco:     #ffffff,
+  verde:      #1dd405,
+  escuro:     #1c5215,
+  doce:       #582507,
+  red:        #ff0000,
 );
 
 

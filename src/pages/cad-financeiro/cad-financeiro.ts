@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController, ToastController, App, ViewController } from 'ionic-angular';
 import { ServiceProvider } from '../../providers/service/service';
+
 
 
 @IonicPage({})
@@ -10,23 +11,30 @@ import { ServiceProvider } from '../../providers/service/service';
 })
 export class CadFinanceiroPage {
 
-  data_pagamento: number;
+  tabBarElement: any;
+  data_pagamento: any;
   pago: number;
   valor: any;
-  categoria_id: number;
-  deposito_id: number;
-  status_id :number;
-  transacoes_id :number;
-  pagamento_id: number;
+  categoria_id: any;
+  deposito_id: any;
+  status_id :any;
+  transacoes_id :any;
+  pagamento_id: any;
   pagamentos:any = [];
   categorias:any = [];
 
   constructor(public navCtrl: NavController, 
               public navParams: NavParams, 
+              public app: App,
+              public viewCtrl: ViewController,
+              public toastyCrtl: ToastController, 
               public server: ServiceProvider,public alertCtrl: AlertController)  {
+
+                this.tabBarElement = document.querySelector('.tabbar');
   }
 
   ionViewDidLoad() {
+    this.tabBarElement.style.display = 'none';
     this.listarPagamentos();
     this.listrCategorias();
   }
@@ -69,6 +77,77 @@ export class CadFinanceiroPage {
 
   cadastrar(){
 
+    if (this.valor  === undefined) {
+
+      const toast = this.toastyCrtl.create({
+        message: 'Você precisa Adicionar um Valor',
+        duration: 3000
+      });
+      toast.present();
+    } else if (this.pagamento_id === undefined){
+
+      const toast = this.toastyCrtl.create({
+        message: 'Selecione uma Forma de Pagamento',
+        duration: 3000
+      });
+      toast.present();
+
+
+    }else if (this.categoria_id === undefined){
+
+      const toast = this.toastyCrtl.create({
+        message: 'Selecione uma Categoria',
+        duration: 3000
+      });
+      toast.present();
+
+
+    }
+
+    else if (this.deposito_id === undefined){
+
+      const toast = this.toastyCrtl.create({
+        message: 'Selecione uma transação',
+        duration: 3000
+      });
+      toast.present();
+
+
+    }
+
+
+    else if (this.status_id === undefined){
+
+      const toast = this.toastyCrtl.create({
+        message: 'Selecione Entra /Saida ?',
+        duration: 3000
+      });
+      toast.present();
+
+
+    }
+
+    else if (this.pago === undefined){
+
+      const toast = this.toastyCrtl.create({
+        message: 'Esta Movimentação está paga ?',
+        duration: 3000
+      });
+      toast.present();
+
+
+    }
+      else if (this.deposito_id === undefined){
+
+        const toast = this.toastyCrtl.create({
+          message: 'Selecione um Transação',
+          duration: 3000
+        });
+        toast.present();
+  
+  
+      } else {
+
     let body = {
       data_pagamento:this.data_pagamento,
       pago:this.pago,
@@ -88,6 +167,7 @@ export class CadFinanceiroPage {
 
     })
   }
+  }
 
   showInsertOk() {
     let alert = this.alertCtrl.create({
@@ -99,12 +179,23 @@ export class CadFinanceiroPage {
           text: 'Ok',
           handler: () => {
 
-            this.navCtrl.setRoot('HomePage')
+            this.navCtrl.push('HomePage')
           }
         }
       ]
     });
     alert.present();
+  }
+
+  openHome(){
+
+    
+    this.navCtrl.push('TabsPage').then(() => {
+      let index = this.navCtrl.length()-2;
+      this.navCtrl.remove(index);
+    });
+
+
   }
 
 }

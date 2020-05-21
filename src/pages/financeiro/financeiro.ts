@@ -101,7 +101,7 @@ export class FinanceiroPage {
               valor:          data.result[i]["valor"]
           });
 
-          console.log(this.financeiros);
+
   
         }
   
@@ -139,13 +139,29 @@ export class FinanceiroPage {
       let total1 = 0;
       let total2 = 0;
       for(let i =0; i < data.result.length; i++){
+
         if(data.result[i]["status"] == 1 ){
-
+  
           total1 += parseFloat(data.result[i]["valor"]);
-
-        }else{
+  
+        }else if ( data.result[i]["status"] == 4) {
+          
+          total1 += parseFloat(data.result[i]["valor"]);
+         
+        }else if(data.result[i]["status"] == 3){
+  
           total2 += parseFloat(data.result[i]["valor"]);
+  
+        }else if(data.result[i]["status"] == 5){
+  
+          total2 += parseFloat(data.result[i]["valor"]);
+  
+        }else{
+  
+          total2 += parseFloat(data.result[i]["valor"]);
+  
         }
+  
       }
 
       this.total1 = total1;
